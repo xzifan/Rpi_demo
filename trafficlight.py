@@ -25,7 +25,7 @@ while True:
     dateTxt = dat.strftime("%Y-%m-%d")
     dat2  = datetime.datetime.now()
     dat2Txt = dat2.strftime("%H:%M:%S")
-    data = urllib2.urlopen("http://users.du.se/~h19zifxi/traffic.php?color=red&timeStamp="+dateTxt+dat2Txt)
+    data = urllib2.urlopen("http://users.du.se/~h19zifxi/ik2018distr/rpi_http_get.php?color=red&timeStamp="+dateTxt+dat2Txt)
     print data.read()
 
     time.sleep(2)
