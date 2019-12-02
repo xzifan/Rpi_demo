@@ -9,17 +9,17 @@ GPIO.setmode(GPIO.BOARD)
 
 
 GPIO.setup(3,GPIO.OUT)
-GPIO.output(3,GPIO.LOW)
+GPIO.output(3,GPIO.HIGH)
 
 GPIO.setup(5,GPIO.OUT)
-GPIO.output(5,GPIO.LOW)
+GPIO.output(5,GPIO.HIGH)
 
 GPIO.setup(7,GPIO.OUT)
-GPIO.output(7,GPIO.LOW)
+GPIO.output(7,GPIO.HIGH)
 
 while True:
 
-    GPIO.output(3,GPIO.HIGH)
+    GPIO.output(3,GPIO.LOW)
 
     dat = datetime.datetime.now()
     dateTxt = dat.strftime("%Y-%m-%d")
@@ -29,22 +29,22 @@ while True:
     print data.read()
 
     time.sleep(2)
-    GPIO.output(3,GPIO.LOW)
-
-    GPIO.output(5,GPIO.HIGH)
-    time.sleep(2)
-    GPIO.output(5,GPIO.LOW)
-
-    GPIO.output(7,GPIO.HIGH)
-    time.sleep(2)
-    GPIO.output(7,GPIO.LOW)
-
-    GPIO.output(5,GPIO.HIGH)
-    time.sleep(2)
-    GPIO.output(5,GPIO.LOW)
-
     GPIO.output(3,GPIO.HIGH)
-    time.sleep(5)
+
+    GPIO.output(5,GPIO.LOW)
+    time.sleep(2)
+    GPIO.output(5,GPIO.HIGH)
+
+    GPIO.output(7,GPIO.LOW)
+    time.sleep(2)
+    GPIO.output(7,GPIO.HIGH)
+
+    GPIO.output(5,GPIO.LOW)
+    time.sleep(2)
+    GPIO.output(5,GPIO.HIGH)
+
     GPIO.output(3,GPIO.LOW)
+    time.sleep(5)
+    GPIO.output(3,GPIO.HIGH)
 
     time.sleep(5)
