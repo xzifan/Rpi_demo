@@ -7,6 +7,6 @@
     $file -> fwrite($timeStamp,PHP_EOL);
     $file2 -> fwrite($timeStamp,PHP_EOL);
 
-    echo $_GET["timeStamp"]
+    echo $_GET["timeStamp"];
 
 ?>
