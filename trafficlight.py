@@ -41,12 +41,12 @@ while True:
     time.sleep(5)
     GPIO.output(7,GPIO.LOW)
 
-    GPIO.output(5,GPIO.HIGH)
-    time.sleep(2)
-    GPIO.output(5,GPIO.LOW)
+    # GPIO.output(5,GPIO.HIGH)
+    # time.sleep(2)
+    # GPIO.output(5,GPIO.LOW)
 
-    GPIO.output(3,GPIO.HIGH)
-    time.sleep(5)
-    GPIO.output(3,GPIO.LOW)
+    # GPIO.output(3,GPIO.HIGH)
+    # time.sleep(5)
+    # GPIO.output(3,GPIO.LOW)
 
-    time.sleep(5)
+    # time.sleep(5)
