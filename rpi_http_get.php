@@ -8,3 +8,5 @@
     $file2 -> fwrite($timeStamp,PHP_EOL);
 
     echo $_GET["timeStamp"]
+
+?>
