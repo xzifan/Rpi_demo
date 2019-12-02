@@ -1,6 +1,6 @@
 <?php
-    $file = new SplFileObject("data.txt","a");
-    $file2 = new SplFileObject("data2.txt","a");
+    $file = fopen("data.txt","a");
+    $file2 = fopen("data2.txt","a");
 
     $timeStamp = $_GET["timeStamp"];
 
