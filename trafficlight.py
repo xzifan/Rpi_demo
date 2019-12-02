@@ -20,11 +20,14 @@ while True:
 
     GPIO.output(3,GPIO.HIGH)
 
+    now = datetime.now()
+    timestamp = datetime.timestamp(now)
+
     dat = datetime.datetime.now()
     dateTxt = dat.strftime("%Y-%m-%d")
     dat2  = datetime.datetime.now()
     dat2Txt = dat2.strftime("%H:%M:%S")
-    data = urllib2.urlopen("http://users.du.se/")
+    data = urllib2.urlopen("http://users.du.se/~h19zifxi/traffic.php?color=red&timeStamp="+timestamp)
     print data.read()
 
     time.sleep(2)
