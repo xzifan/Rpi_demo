@@ -20,8 +20,6 @@ GPIO.output(7,GPIO.LOW)
 while True:
 
     GPIO.output(3,GPIO.HIGH)
-    GPIO.output(5,GPIO.LOW)
-    GPIO.output(7,GPIO.LOW)
 
     dat = datetime.datetime.now()
     dateTxt = dat.strftime("%Y-%m-%d")
