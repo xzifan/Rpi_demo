@@ -6,11 +6,13 @@ class DaoObject:
         '''
         Initializing db.txt file.
         ''' 
-        with open(filepath,"r+") as file:
-            list = file.readlines() 
-        self.count = len(list)
         self.filepath = filepath
-        print("The size of db is: ",self.count)
+        try:
+            with open(filepath,"w") as f:
+                f.truncate(0)
+        except FileNotFoundError:
+            with open(filepath, 'w+') as f:
+                print("File created!")
         return
 
     def addItem(self, item):
