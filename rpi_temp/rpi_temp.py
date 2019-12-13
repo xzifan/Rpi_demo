@@ -15,7 +15,7 @@ while True:
     print lines[0][:-1]
     print lines[1][:-1]
 
-    tempdata = lines[1].split["="]
+    tempdata = lines[1].split("=")
 
     temp = float(tempdata[1])
 
