@@ -1,4 +1,4 @@
-import os, glob,time, requests
+import os, glob,time, requests,datetime
 
 os.system("modprobs w1_gpio")
 os.system("modprobs w1_therm")
@@ -7,7 +7,7 @@ devicelist = glob.glob("/sys/bus/w1/devices/28*")
 
 devicefile = devicelist[0]+"/w1_slave"
 
-url = "http://130.243.35.37"# ip of the main RPi
+url = "http://130.243.35.86/center_http_handle.php"# ip of the main RPi
 
 while True:
     file = open(devicefile,'r')
@@ -26,8 +26,8 @@ while True:
     dat = datetime.datetime.now()
     timestamp = dat.strftime("%Y-%m-%d;%H:%M:%S")
 
-    data = "{str:"+timestamp+temp+"}"
-    print "Request:",json_encode(data)
-    r = requests.get(url=url,params = data)
+    data = timestamp+";"+str(temp)
+
+    r = requests.get(url=url+"?str="+data)
 
     time.sleep(5)
