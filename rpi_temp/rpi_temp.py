@@ -14,8 +14,7 @@ while True:
     lines = file.readlines()
     file.close()
 
-    print lines[0][:-1]
-    print lines[1][:-1]
+    ##print lines[1][:-1]
 
     tempdata = lines[1].split("=")
 
@@ -27,7 +26,7 @@ while True:
     timestamp = dat.strftime("%Y-%m-%d;%H:%M:%S")
 
     data = timestamp+";"+str(temp)
-
+    print data
     r = requests.get(url=url+"?str="+data)
 
     time.sleep(5)
