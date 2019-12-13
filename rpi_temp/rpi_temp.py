@@ -20,6 +20,11 @@ while True:
     temp = float(tempdata[1])
 
     temp = temp/1000
-    print temp
 
-    time.sleep(1)
+    dat = datetime.datetime.now()
+    timestamp = dat.strftime("%Y-%m-%d;%H:%M:%S")
+    print timestamp,temp
+
+
+
+    time.sleep(5)
