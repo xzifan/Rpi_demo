@@ -5,7 +5,7 @@ os.system("modprobs w1_therm")
 
 devicelist = glob.glob("/sys/bus/w1/devices/28*")
 
-devicefile = devicelist[0]+"w1_slave"
+devicefile = devicelist[0]+"/w1_slave"
 
 while True:
     file = open(devicefile,'r')
