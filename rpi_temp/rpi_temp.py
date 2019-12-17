@@ -18,7 +18,7 @@ mail_pass = "transactmax00r"
 sender = 'c547028957@gmail.com'
 receivers = 'h19zifxi@du.se'
 def getTemp():
-    r = requests.get("http://api.openweathermap.org/data/2.5/weather?id=2715459&key=5cd561acef24305af40d29a6c9e0469c")
+    r = requests.get("http://api.openweathermap.org/data/2.5/weather?id=2715459&appid=5cd561acef24305af40d29a6c9e0469c")
     print r
     return r
     
@@ -27,14 +27,15 @@ while True:
     lines = file.readlines()
     file.close()
 
-    ##print lines[1][:-1]
+    print lines[1][:-1]
 
     tempdata = lines[1].split("=")
 
     temp = float(tempdata[1])
 
     temp = temp/1000
-    if temp>getTemp():
+    print getTemp()["data"]["main"]["temp"];
+    if temp>getTemp()["main"]["temp"]-273.15:
         msg = MIMEText(dateTxt+" "+dat2Txt+": There are"+numOfCars+" in red. "+"The No2 content is "+ NitrogenDioxide)
         #msg = MIMEText("There are "+str(numOfCars)+" cars in red")
         subject = 'This is the python email'
