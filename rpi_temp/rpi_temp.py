@@ -1,4 +1,4 @@
-import os, glob,time, urllib.request, datetime, smtplib
+import os, glob,time, requests, datetime, smtplib
 from email.mime.text import MIMEText
 from email.header import Header
 
@@ -18,11 +18,9 @@ mail_pass = "transactmax00r"
 sender = 'c547028957@gmail.com'
 receivers = 'h19zifxi@du.se'
 def getTemp():
-    r = urllib.request.urlopen("http://api.openweathermap.org/data/2.5/weather?id=2715459&appid=5cd561acef24305af40d29a6c9e0469c")
+    r = requests.get("http://api.openweathermap.org/data/2.5/weather?id=2715459&appid=5cd561acef24305af40d29a6c9e0469c")
     print(r)
-    r.read()
-    decodedResponse = r.decode("utf-8")
-    jsondata = json.loads(decodedResponse)
+    jsondata = r.json()
     return jsondata
     
 while True:
